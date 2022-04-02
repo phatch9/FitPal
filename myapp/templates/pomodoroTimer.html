@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="center_div">
+    <h1>Pomodoro Timer</h1>
+
+    <div class="pomodoroTimer_container">
+        <p id="work" class="label">Time:</p>
+        <p id="break" class="label">Break:</p>
+
+        <!--Work Timer-->
+        <div id="work-timer" class="pomodoroTimer">
+            <p id="w_minutes">25</p>
+            <p class="semicolon">:</p>
+            <p id="w_seconds">00</p>
+        </div>
+
+        <!--Break Timer-->
+        <div id="break-timer" class="pomodoroTimer">
+            <p id="b_minutes">05</p>
+            <p class="semicolon">:</p>
+            <p id="b_seconds">00</p>
+        </div>
+
+        <button id="start" class="btnz">Start</button>
+        <button id="stop"  class="btnz">Pause</button>
+        <button id="reset" class="btnz">Reset</button>
+    </div>
+
+    <!--Already cite the source from the internet -->
+    <div class="tenor-gif-embed squid__gif" data-postid="23490293" 
+        data-share-method="host" data-aspect-ratio="0.896875" data-width="300px">
+        <a href="https://tenor.com/view/squid-game-squid-game-ez-guard-gif-23490293">
+            Squid Game Ez GIF
+        </a>
+        from
+        <a href="https://tenor.com/search/squid+game-gifs">
+            Squid Game GIFs
+        </a>
+    </div>
+</div>
+    
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <script src="{{ url_for('static', filename='pomodoroTimer.js') }}"></script>
+{% endblock %}

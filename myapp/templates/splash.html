@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--==================== HOME ====================-->
+<section class="home__container">
+    {% if not current_user.is_authenticated %}
+    <div class="home__img_cover">
+        <div class="home__img_container">
+            <img src="../static/img/fitpal_home.png" alt="" class="home__img">
+        </div>
+
+        <div class="home__data_container">
+            <p class="home__title">FitPal</p>
+            <p class="home__subtitle">First Work-Out Metaverse<br> Learn to get healthier!</p>
+            <p class="home__list_container">
+                <ul>
+                    <li class="home__list">View Workout Plan</li>
+                    <li class="home__list">View Workout History</li>
+                    <li class="home__list">Pomodoro-Timer</li>
+                    <li class="home__list">Tracking Hours</li>
+                </ul>
+            </p>
+            <div class="home__buttons">
+                <a href="/register" class="button">Workout Now</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Our Features</h2>
+    <div class="home__img_feature">
+        <img src="../static/img/home_flashc.jfif" alt="" class="home__imgz">
+        <img src="../static/img/Shareflashcard.jfif" alt="" class="home__imgz">
+        <img src="../static/img/UploadNotes.jfif" alt="" class="home__imgz">
+        <img src="../static/img/ShareNote.jfif" alt="" class="home__imgz">
+        <img src="../static/img/TodoList.jfif" alt="" class="home__imgz">
+        <img src="../static/img/PomodoroTimer.jfif" alt="" class="home__imgz">
+        <img src="../static/img/TrackHour.jfif" alt="" class="home__imgz">
+    </div>
+    {% else %}
+    <div class="home__img_cover">
+        <div class="home__img_container">
+            <img src="../static/img/user_img_cover.png" alt="" class="home__img">
+        </div>
+
+        <div class="home__data_container">
+            <p class="home__title">FitPal</p>
+            <p class="home__subtitle">Welcome Back<br></p>
+            <p class="home__list_container">
+                <ul>
+                    <li class="home__list"> 
+                        <a class="home__link" href="/renderFlashCard">View Workout Plan</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/pomodoroTimer">View Workout History</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/todolist">Pomodoro-Timer</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/trackHours">Tracking Hours</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+        
+
+    {% endif %}
+</section>
+{% endblock  %}
+			 
+
