@@ -10373,15 +10373,75 @@ header.masthead .post-heading .meta a {
   }
 }
 
+/*========== Pomodoro Timer Section ==========*/
 .pomodoroTimer_container {
   height: 300px;
   width: 480px;
   margin: 40px 0px;
-  color: wheat;
+  color: whitesmoke;
   border: 7px solid #b93170;
   background-color: #3a4041;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+/*timers*/
+.label {
+  align-self: center;
+  justify-self: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#work {
+  grid-area: 1 / 2 / 1 / 2;
+}
+#break {
+  grid-area: 1 / 4 / 1 / 4;
+}
+
+.pomodoroTimer {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#work-timer {
+  grid-area: 2 / 2 / 2 / 2;
+}
+
+#break-timer {
+  grid-area: 2 / 4 / 2 / 4;
+}
+
+.btnz {
+  align-self: center;
+  justify-self: center;
+  color: #3a4041;
+  font-weight: 500;
+  font-size: 25px;
+}
+.btnz:hover {
+  color: #b93170;
+  border: 2px solid #b93170;
+}
+
+#start {
+  grid-area: 3 / 2 / 3 / 2;
+}
+
+#reset {
+  grid-area: 3 / 3 / 3 / 3;
+}
+
+#stop {
+  grid-area: 3 / 4 / 3 / 4;
+}
+.squid__gif {
+  margin: 40px 70px;
 }
