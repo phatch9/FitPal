@@ -243,3 +243,16 @@ def calculate_workout():
 def pomodoroTimer():
     title = 'Pomodoro Timer'
     return render_template("pomodoroTimer.html", title=title)
+
+@app.route("/delete")
+@login_required
+def delete():
+    session.pop('fname')
+    session.pop('id')
+    logout_user()
+    flash('Your account is deleted', 'error')
+    return redirect("/signin")
+
+    # session.pop('fname')
+    # session.pop('id')
+    # logout_user()
