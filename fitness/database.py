@@ -54,3 +54,10 @@ class UserData(db.Model):
     rest = db.Column(db.Integer, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     # user = db.relationship('User', foreign_keys = user_id)
+
+#to do list db
+class Todo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    complete = db.Column(db.Boolean)
+
