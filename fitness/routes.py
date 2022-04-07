@@ -2,7 +2,7 @@ from __future__ import print_function
 from flask import redirect, url_for, render_template, flash, request, session, make_response
 from fitness import app, db, bcrypt
 from fitness.forms import SignInForm, SignUpForm, itemForm, calorieForm, CalorieWorkoutForm, PostStructure, SearchForm
-from fitness.database import User, Post, load_user, UserData
+from fitness.database import User, Post, load_user, UserData, Todo
 from flask_login import current_user, login_user, current_user, logout_user, login_required
 from fitness import nix
 from time import time
@@ -253,6 +253,35 @@ def delete():
     flash('Your account is deleted', 'error')
     return redirect("/signin")
 
-    # session.pop('fname')
-    # session.pop('id')
-    # logout_user()
+
+@app.route("/todolist")
+@login_required
+def todoList():
+    todo_list = Todo.query.all()
+    return render_template("todolist.html", todo_list=todo_list)
+
+@app.route("/add", methods=["POST"])
+@login_required
+def add():   
+    title = request.form.get("title")
+    new_todo = Todo(title=title, complete=False)
+    db.session.add(new_todo)
+    db.session.commit()
+    return redirect(url_for("todoList"))
+
+@app.route("/update/<int:todo_id>")
+@login_required
+def update(todo_id):   
+    todo = Todo.query.filter_by(id=todo_id).first()
+    todo.complete = not todo.complete
+    db.session.commit()
+    return redirect(url_for("todoList"))
+
+@app.route("/delete/<int:todo_id>")
+@login_required
+def deletetodo(todo_id):   
+    todo = Todo.query.filter_by(id=todo_id).first()
+    db.session.delete(todo)
+    db.session.commit()
+    return redirect(url_for("todoList"))
+
