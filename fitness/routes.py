@@ -284,4 +284,7 @@ def deletetodo(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for("todoList"))
+@app.route("/workoutplan")
+def workoutplan():
+    return render_template("workoutplan.html")
 
