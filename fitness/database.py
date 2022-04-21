@@ -1,3 +1,4 @@
+from sqlalchemy import Column, Integer, String,Boolean, DateTime
 from datetime import datetime
 from fitness import db, login_manager
 from flask_login import UserMixin
@@ -60,4 +61,30 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
+
+
+#create plan db
+# class Exercise(db.Model)
+#     name= db.Column(db.String(60), nullable=False)
+
+
+class Plan(db.Model):
+    __tablename__='Plan'
+
+    plan_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name= db.Column(db.String(60), nullable=False)
+    detail = db.Column(db.String(200))
+    rep = db.Column(db.Integer, nullable=False)
+    Set = db.Column(db.Integer, nullable=False)
+    complete = db.Column(db.Boolean)
+    create_date = db.Column(DateTime,default=datetime.now())
+
+
+if __name__ == '__main__':
+    db.create_all()
+
+
+    
+ 
+
 

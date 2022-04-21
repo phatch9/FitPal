@@ -5,6 +5,7 @@ from fitness.forms import SignInForm, SignUpForm, itemForm, calorieForm, Calorie
 from fitness.database import User, Post, load_user, UserData, Todo
 from flask_login import current_user, login_user, current_user, logout_user, login_required
 from fitness import nix
+from fitness.createplan import *
 from time import time
 from datetime import date
 import json
@@ -284,7 +285,7 @@ def deletetodo(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for("todoList"))
-@app.route("/workoutplan")
+@app.route("/admin")
 def workoutplan():
-    return render_template("workoutplan.html")
+    return render_template("index.html")
 
