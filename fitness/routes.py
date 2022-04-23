@@ -242,7 +242,7 @@ def calculate_workout():
 @app.route('/pomodoroTimer')
 @login_required
 def pomodoroTimer():
-    title = 'Pomodoro Timer'
+    title = 'Workout Timer'
     return render_template("pomodoroTimer.html", title=title)
 
 @app.route("/delete")
@@ -285,6 +285,7 @@ def deletetodo(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for("todoList"))
+
 @app.route("/admin")
 def workoutplan():
     return render_template("index.html")

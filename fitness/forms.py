@@ -50,7 +50,7 @@ class calorieForm(FlaskForm):
 # Calories form
 class CalorieWorkoutForm(FlaskForm):
     cardio_wo = DecimalField("Cardio workout(calories)", validators=[])
-    strength_wo = DecimalField("Strength workout(calories)", validators=[])
+    strength_wo = DecimalField("strength workout(calories)", validators=[])
     rest = DecimalField("Rest(Calories)", validators=[])
     submit = SubmitField("Submit")
 
