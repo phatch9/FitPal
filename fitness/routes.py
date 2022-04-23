@@ -198,7 +198,7 @@ def signin():
             login_user(user)
             session['id'] = user.id
             session['fname'] = user.fname
-            return redirect(url_for('user'))
+            return redirect(url_for('home'))
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('signin.html', form=form)
