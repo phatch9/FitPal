@@ -1,7 +1,7 @@
 from __future__ import print_function
 from flask import redirect, url_for, render_template, flash, request, session, make_response
 from fitness import app, db, bcrypt
-from fitness.forms import SignInForm, SignUpForm, itemForm, calorieForm, CalorieWorkoutForm, PostStructure, SearchForm
+from fitness.forms import SignInForm, SignUpForm, itemForm, calorieForm, CalorieWorkoutForm
 from fitness.database import User, Post, load_user, UserData, Todo
 from flask_login import current_user, login_user, current_user, logout_user, login_required
 from fitness import nix
@@ -39,64 +39,6 @@ def protected():
 def home():
     posts = Post.query.all()
     return render_template('index.html', posts=posts)
-
-
-# Route for about page
-@app.route("/about")
-def about():
-    return render_template('about.html')
-
-
-# Route for contact page
-@app.route("/contact")
-def contact():
-    return render_template('contact.html')
-
-
-# Route for post page
-@app.route("/mypost")
-@login_required
-def mypost():
-    posts = Post.query.filter_by(user_id=session['id']).all()
-    return render_template('mypost.html', posts=posts)
-
-
-# Route for post page
-@app.route("/post/<int:post_id>")
-def post(post_id):
-    post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post)
-
-
-# route for creating new post
-@app.route("/new_post", methods=['GET', 'POST'])
-@login_required
-def new_post():
-    form = PostStructure()
-    if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
-        db.session.add(post)
-        db.session.commit()
-        flash('Your post has been created!', 'success')
-        return redirect(url_for('home'))
-    return render_template('new_post.html', title='New Post', form=form, legend='New Post')
-
-
-# searching bar
-@app.route('/search', methods=['GET', 'POST'])
-def search():
-    query = request.args.get('q')
-    print("This is query", query)
-    if query:
-        return redirect((url_for('search_results', search_title=query)))
-    return render_template('search.html')
-
-
-@app.route('/search_results/<search_title>')
-def search_results(search_title):
-    search_title1 = Post.query.filter(Post.title.contains(search_title)).first()
-    return render_template('search_result.html', results=search_title1)
-
 
 # Route for log out direction which is home page
 @app.route("/logout")
