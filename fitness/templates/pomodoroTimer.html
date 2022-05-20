@@ -3,6 +3,32 @@
 <div class="center_div">
   <h1>Workout Timer & Listen to music</h1>
 
+  <div class="music-container" id="music-container">
+    <div class="music-info">
+      <h4 id="title"></h4>
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+
+    <audio src="static/music/ukulele.mp3" id="audio"></audio>
+
+    <div class="img-container">
+      <img src="static/images/ukulele.jpg" alt="music-cover" id="cover" />
+    </div>
+    <div class="navigation">
+      <button id="prev" class="action-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-big">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+  </div>
+
   <div class="pomodoroTimer_container">
     <p id="work" class="label">Time:</p>
     <p id="break" class="label">Break:</p>
@@ -41,4 +67,5 @@
 
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 <script src="{{ url_for('static', filename='js/pomodoroTimer.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script_music.js') }}"></script>
 {% endblock %}
