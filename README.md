@@ -10,7 +10,17 @@ Feel free to ask any questions through E-mail: jiminsong.software@gmail.com
 
 [FitPal]
 
-Using Flask, SQLAlchemy, and JavaScript
+Using Vanilla Javascript, Flask, SQLAlchemy(SQLite)
+
+[Building and Running]
+Use Python 3.8-3.10
+To run the flask application , go to FitPal folder and run commands below
+
+pip install -r requirements.txt
+python run.py
+
+after that, open the url:
+http://localhost:5001/
 
 ### Project Structure
 
@@ -33,8 +43,10 @@ Using Flask, SQLAlchemy, and JavaScript
 │   ├── site.db
 │   ├── static
 │   │   ├── css
+│   │   ├── images
 │   │   ├── img
 │   │   ├── js
+│   │   ├── music
 │   │   ├── scss
 │   │   ├── vendor
 │   │   └── webfonts
@@ -46,15 +58,9 @@ Using Flask, SQLAlchemy, and JavaScript
 │       ├── equipment.html
 │       ├── index copy.html
 │       ├── index.html
-│       ├── mypost.html
-│       ├── new_post.html
 │       ├── pomodoroTimer.html
-│       ├── post.html
-│       ├── search.html
-│       ├── search_result.html
 │       ├── signin.html
 │       ├── signup.html
-│       ├── static
 │       ├── strength.html
 │       ├── supplement.html
 │       ├── todolist.html
@@ -70,5 +76,6 @@ Using Flask, SQLAlchemy, and JavaScript
 ├── requirements.txt
 └── run.py
 
-13 directories, 40 files
+14 directories, 35 files
+
 ```
