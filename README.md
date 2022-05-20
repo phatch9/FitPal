@@ -22,6 +22,10 @@ python run.py
 after that, open the url:
 http://localhost:5001/
 
+To Login with Demo ID/Password
+Email: test@gmail.com
+Password: test123456
+
 ### Project Structure
 
 ```
