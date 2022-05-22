@@ -15,7 +15,7 @@ Using Vanilla Javascript, Flask, SQLAlchemy(SQLite)
 
 [Building and Running]
 Use Python 3.8-3.10
-###To run the flask application, run these commands below
+To run the flask application, run these commands below
 ```
 git clone https://github.com/JimSongTheGreatest/FitPal.git
 
