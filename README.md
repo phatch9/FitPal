@@ -15,23 +15,26 @@ Using Vanilla Javascript, Flask, SQLAlchemy(SQLite)
 
 [Building and Running]
 Use Python 3.8-3.10
-To run the flask application , go to FitPal folder and run commands below
-```txt
+To run the flask application, run these commands below
+```
+git clone https://github.com/JimSongTheGreatest/FitPal.git
+
+cd FitPal
+
 pip3 install -r requirements.txt
-```
-then
-```txt
+
 python3 run.py
+
 ```
-
-
-
 after that, open the url:
 http://localhost:5001/
 
 To Login with Demo ID/Password
+```txt
 Email: test@gmail.com
 Password: test123456
+
+```
 
 ### Project Structure
 
