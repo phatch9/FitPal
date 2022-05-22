@@ -3,6 +3,7 @@ Contributors
 
 Jimin Song [Project Manager, Full-Stack Developer]
 Danh Pham [Front-End Developer]
+Shyam Vyas [Front-End Developer]
 
 ```
 
