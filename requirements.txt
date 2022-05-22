@@ -11,6 +11,7 @@ Flask-Bcrypt==1.0.1
 Flask-Login==0.6.0
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==1.0.1
+Flask-Admin==1.6.0
 greenlet==1.0.0
 idna==3.3
 itsdangerous==1.1.0
@@ -29,3 +30,4 @@ SQLAlchemy==1.4.13
 urllib3==1.26.9
 Werkzeug==2.0.3
 WTForms==2.3.3
+
