@@ -3,7 +3,7 @@ Contributors
 
 Jimin Song [Project Manager, Full-Stack Developer]
 Danh Pham [Front-End Developer]
-
+Suhail Khan [System Enginner]
 ```
 
 Feel free to ask any questions through E-mail: jiminsong.software@gmail.com
