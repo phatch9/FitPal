@@ -35,6 +35,8 @@ Email: test@gmail.com
 Password: test123456
 
 ```
+### Open Source
+We encourage anyone who is interested in this project, please fork the repo and work on issues opened and open pull request. I will review and merge it.
 
 ### Project Structure
 
